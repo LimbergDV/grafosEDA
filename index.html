@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafos de lugares Tuxtla Gutiérrez</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="textPrincipal">
+       <p class="text1"> Locaciones de Tuxtla Gutiérrez</p> 
+    </div>
+    <br><br>
+    <div class="form-container">
+        <h2>Registrar locaciones de Tuxtla</h2>
+        <input id="location" type="text" placeholder="Ingresa tu locación de Tuxtla Gutiérrez">
+        <button id="btn-add1">Agregar locación</button>
+        </div>
+        <br><br>
+        <div class="form-container2">
+            <h2>Agrega la distancia entre dos locaciones</h2>
+            <input id="firsLocation" type="text" placeholder="Ingresa tu primera locación">
+            <input id="secondLocation" type="text" placeholder="Ingresa tu segunda locación">
+            <input id="weightLocation" type="text" placeholder="Ingresa la distancia entre las locaciones">
+            <button id="btn-add2">Agregar distancia</button>
+            </div>
+
+            <br><br>
+
+            <div class="form-container3">
+                <h2>Recorrido de locaciones de Tuxtla</h2>
+                <input id="initLocation" type="text" placeholder="Ingresa el lugar de inicio de recorrido">
+                <button id="btn-add3">Agregar locación</button>
+                </div>
+
+            <div id="allLocation">
+                <h3>LOCACIONES:</h3>
+                <div id="location-list"></div>
+            </div>
+              
+            <br>
+            <br> <br>
+            <table id="placesTable" border = "1px">
+                <thead>
+                  <tr>
+                    <th>Lugares</th>
+                  </tr>
+                </thead>
+                <tbody id="body-table">
+  
+                </tbody>
+              </table>
+
+    <script type="module" src="./src/controllers/script.mjs"></script>
+</body>
+</html>
