@@ -27,11 +27,12 @@ addLocationButton.addEventListener('click', () => {
 });
 
 addDistanceButton.addEventListener('click', () => {
-    let firstLocation = firstLocationInput.value.trim();
-    let secondLocation = secondLocationInput.value.trim();
-    let weight = parseFloat(weightLocationInput.value.trim());
+    let firstLocation = document.getElementById("firsLocation").value;
+    let secondLocation = document.getElementById("secondLocation").value;
+    let weight = parseInt(document.getElementById("weightLocation").value);
 
-    if (firstLocation && secondLocation && !isNaN(weight)) {
+
+    if (firstLocation, secondLocation != "" && weight >= 0) {
         let success = g.addConexion(firstLocation, secondLocation, weight);
         if (success) {
             updateLocationList();
@@ -48,11 +49,15 @@ addDistanceButton.addEventListener('click', () => {
 });
 
 startDfsButton.addEventListener('click', () => {
-    let initLocation = initLocationInput.value.trim();
-    if (initLocation) {
-        performDFS(initLocation);
-    }
+    let initLocation = document.getElementById("initLocation").value;
+    
+   g.dfs(initLocation, imprimir) //Se inicia el recorrido. Puedes cambiar el callback
+   g.getVisit().clear() //Limpio el Set() de visitados, para poder generar otra visita
 });
+
+let imprimir = (value) => {
+    console.log(value);
+}
 
 function updateLocationList() {
     locationListDiv.innerHTML = '';

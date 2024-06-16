@@ -4,14 +4,13 @@ export default class Graph {
   #listaAdyacencia = [];
   #map = new Map();
   #visit = new Set();
-  #count = 0;
+
   
   constructor() {}
 
   addV(value) {
     this.#listaAdyacencia.push(new LinkedList());
     this.#map.set(value, this.#listaAdyacencia.length - 1);
-    this.#count++;
     return true;
   }
 
@@ -47,7 +46,5 @@ export default class Graph {
     return this.#visit;
   }
   
-  size() {
-    return this.#count;
-  }
+
 }

@@ -14,11 +14,10 @@ export class LinkedList {
         let lugar = new Lugar(nombre, peso)
         const node = new Node(lugar)
 
-        let current
         if (this.#head == null) {
             this.#head = node
         } else {
-            current = this.#head
+            let current = this.#head
             while (current.next != null)
                 current = current.next
             current.next = node
@@ -31,7 +30,7 @@ export class LinkedList {
             let node = this.#head
             for (let i=0;i<index && node != null; i++)
                 node = node.next
-            return node
+            return node.data.nombre
         }
         return undefined
     }

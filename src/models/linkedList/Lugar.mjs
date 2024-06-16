@@ -3,7 +3,7 @@ export default class Lugar{
     peso
 
     constructor(nombre, peso){
-        this.nombre = this.nombre
+        this.nombre = nombre
         this.peso = peso
     }
 }
