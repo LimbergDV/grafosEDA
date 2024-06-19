@@ -12,6 +12,7 @@ let locationListDiv = document.getElementById('location-list');
 let startDfsButton = document.getElementById('btn-add3');
 let initLocationInput = document.getElementById('initLocation');
 let dfsListDiv = document.getElementById('dfs-list');
+let startDijkstra = document.getElementById('btn-add4');
 
 addLocationButton.addEventListener('click', () => {
     let location = locationInput.value.trim();
@@ -56,8 +57,18 @@ startDfsButton.addEventListener('click', () => {
 });
 
 let imprimir = (value) => {
-    console.log(value);
+    alert(value);
+    console.log(value)
 }
+
+startDijkstra.addEventListener('click', () =>{
+    let initDijkstra = document.getElementById("initDijkstra").value;
+    let distances = g.dijkstra(initDijkstra);
+
+    console.log('Distancia:', distances);
+    alert('Distancia: ' + distances);
+})
+
 
 function updateLocationList() {
     locationListDiv.innerHTML = '';
@@ -68,7 +79,7 @@ function updateLocationList() {
     });
 }
 
-function performDFS(start) {
+/*function performDFS(start) {
     let result = [];
     g.dfs(start, (location) => result.push(location));
 
@@ -77,7 +88,7 @@ function performDFS(start) {
         div.textContent = location;
         dfsListDiv.appendChild(div);
     });
-}
+}*/
 
 // Inicializar la lista de locaciones
 updateLocationList();

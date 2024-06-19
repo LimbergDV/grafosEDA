@@ -2,6 +2,7 @@ import { LinkedList } from "./linkedList/LinkedList.mjs";
 
 export default class Graph {
   #listaAdyacencia = [];
+  #matrizAdyacencia = []
   #map = new Map();
   #visit = new Set();
   #count = 0;
@@ -36,6 +37,53 @@ export default class Graph {
         this.#visit.add(v);
         this.dfs(v, callback);
       }
+    }
+  }
+
+  dijkstra(verticesInit){
+    let infinito = 1000000
+      let L = []
+      let V = []
+      let LPrima = []
+      let D = []
+      let DPrima = []
+      let v1;
+
+    for (let i=0; i<this.#matrizAdyacencia.length; i++){
+      V[i]=i
+      LP[i]= V[i]
+      D[i] = infinito
+      DPrima[i] = infinito
+
+    }
+
+    v1= this.#map.get(verticesInit)
+    D[v1] = 0
+    DPrima [v1]=0 
+
+    while(L.length != V.length){
+      let minimo = infinito
+      let minimoIndex = -1
+
+      for(let i = 0; i<V.length; i++){
+        if(LP[i] !== null && DPrima[i]< minimo){
+          minimo = DPrima[i]
+          minimoIndex = i
+        }
+      }
+
+      if (minimoIndex === -1){
+        break;
+      }
+
+      L.push(minimoIndex) = null
+      LPrima[minimoIndex] = null
+      
+      for(let i = 0;i<V.length; i++){
+        
+      }
+
+
     }
   }
 

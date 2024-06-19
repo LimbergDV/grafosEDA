@@ -41,6 +41,7 @@ body {
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
+
 }
 
 .form-container button {
@@ -109,7 +110,9 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
-    margin-left: 30px;
+    margin-left: 400px;
+    position: relative;
+    bottom: 670px;
 }
 
 .form-container3 h2 {
@@ -142,6 +145,45 @@ body {
     background-color: #45a049;
 }
 
+.form-container4 {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-left: 400px;
+    position: relative;
+    bottom: 630px;
+}
+
+.form-container4 h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-container4 input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+
+}
+
+.form-container4 button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
 #allLocation {
     background-color: #fff;
     padding: 20px;
@@ -149,7 +191,7 @@ body {
     box-shadow: 40 0 10px rgba(0, 0, 0, 0.1);
     width: 400px;
     position: relative;
-    bottom: 670px;
+    bottom: 940px;
     left: 1000px;
     text-align: center;
 }
