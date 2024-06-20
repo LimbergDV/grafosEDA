@@ -1,6 +1,6 @@
-import Graph from "../models/Graph.mjs";
+import { graph } from "./dependencies.js";
 
-let g = new Graph();
+
 
 let locationInput = document.getElementById('location');
 let addLocationButton = document.getElementById('btn-add1');
@@ -17,7 +17,7 @@ let startDijkstra = document.getElementById('btn-add4');
 addLocationButton.addEventListener('click', () => {
     let location = locationInput.value.trim();
     if (location) {
-        g.addV(location);
+        graph.addV(location);
         updateLocationList();
         locationInput.value = '';
         alert('Ubicación agregada');
@@ -34,7 +34,7 @@ addDistanceButton.addEventListener('click', () => {
 
 
     if (firstLocation, secondLocation != "" && weight >= 0) {
-        let success = g.addConexion(firstLocation, secondLocation, weight);
+        let success = graph.addConexion(firstLocation, secondLocation, weight);
         if (success) {
             updateLocationList();
             console.log(success);
@@ -52,8 +52,8 @@ addDistanceButton.addEventListener('click', () => {
 startDfsButton.addEventListener('click', () => {
     let initLocation = document.getElementById("initLocation").value;
     
-   g.dfs(initLocation, imprimir) //Se inicia el recorrido. Puedes cambiar el callback
-   g.getVisit().clear() //Limpio el Set() de visitados, para poder generar otra visita
+   graph.dfs(initLocation, imprimir) //Se inicia el recorrido. Puedes cambiar el callback
+   graph.getVisit().clear() //Limpio el Set() de visitados, para poder generar otra visita
 });
 
 let imprimir = (value) => {
@@ -63,16 +63,16 @@ let imprimir = (value) => {
 
 startDijkstra.addEventListener('click', () =>{
     let initDijkstra = document.getElementById("initDijkstra").value;
-    let distances = g.dijkstra(initDijkstra);
+    let distances = graph.dijkstra(initDijkstra);
 
-    console.log('Distancia:', distances);
+    console.log('Distancia:' + distances);
     alert('Distancia: ' + distances);
 })
 
 
 function updateLocationList() {
     locationListDiv.innerHTML = '';
-    g.getVertices().forEach((location) => {
+    graph.getVertices().forEach((location) => {
         const div = document.createElement('div');
         div.textContent = location;
         locationListDiv.appendChild(div);
@@ -81,7 +81,7 @@ function updateLocationList() {
 
 /*function performDFS(start) {
     let result = [];
-    g.dfs(start, (location) => result.push(location));
+    graph.dfs(start, (location) => result.push(location));
 
     result.forEach(location => {
         const div = document.createElement('div');

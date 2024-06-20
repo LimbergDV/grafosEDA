@@ -80,7 +80,12 @@ export default class Graph {
       LPrima[minimoIndex] = null
       
       for(let i = 0;i<V.length; i++){
-        
+        if(LPrima[i] !== null){
+          let alt = DPrima[minimoIndex] + this.#matrizAdyacencia [minimoIndex][i];
+          if(alt<DPrima[i]){
+            DPrima[i] = alt;
+          }
+        }
       }
 
 
